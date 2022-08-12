@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - textual uniqueness</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel='stylesheet' href='https://unpkg.com/jest-lite@1.0.0-alpha.4/dist/prettify.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<base target="_top"/>
+<div class="chat">
+  <div class="recv msg"><a href="https://twitter.com/cassidoo/"><img src="https://buttondown.s3.amazonaws.com/icons/cfaf57f2-7aba-4c14-b56b-d41008562067.png"/></a>
+    <p> 
+      <q><a href="https://buttondown.email/cassidoo/archive/keep-your-face-always-toward-the-sunshine-and/">Write a function that determines if all the characters in a given string are unique</a></q> <br/>... n e ideas?
+    </p>
+  </div>
+  <div class="send msg"><a href="https://twitter.com/ycwhk"><img src="https://assets.codepen.io/845233/internal/avatars/users/default.png?format=auto&amp;version=1527940932&amp;width=80&amp;height=80"/></a>
+    <p>subbort emogi?</p>
+  </div>
+  <div class="recv msg"><a href="https://twitter.com/ahmesiyadd/"><img src="https://buttondown.s3.amazonaws.com/icons/cfaf57f2-7aba-4c14-b56b-d41008562067.png"/></a>
+    <p>YeS</p>
+  </div>
+  <div class="send msg"><a href="https://twitter.com/ycwhk"><img src="https://assets.codepen.io/845233/internal/avatars/users/default.png?format=auto&amp;version=1527940932&amp;width=80&amp;height=80"/></a>
+    <p>here ugo...</p>
+  </div>
+  <div class="send msg"><a href="https://twitter.com/ycwhk"><img src="https://assets.codepen.io/845233/internal/avatars/users/default.png?format=auto&amp;version=1527940932&amp;width=80&amp;height=80"/></a>
+    <script id="impl">
+      function isAllUniq(chars) {
+        const d = new Set();
+        let c, h, k, i = 0;
+        while (i < chars.length) {
+          c = chars[i];
+          h = c >= '\ud800' && c <= '\udb7f';
+          k = chars.substring(i, (i += 1 + h));
+          if (d.has(k)) return false;
+          d.add(k);
+        }
+        return true;
+      }
+    </script>
+  </div>
+  <div class="recv msg"><a href="https://twitter.com/cassidoo/"><img src="https://buttondown.s3.amazonaws.com/icons/cfaf57f2-7aba-4c14-b56b-d41008562067.png"/></a>
+    <p id="report"></p>
+  </div>
+  <div class="recv msg"><a href="https://twitter.com/cassidoo/"><img src="https://buttondown.s3.amazonaws.com/icons/cfaf57f2-7aba-4c14-b56b-d41008562067.png"/></a><img class="gif" src="https://media4.giphy.com/media/WysXULNjWrer4QKTHP/giphy.gif?cid=ecf05e47qmru6jd3lnrq3qtl1cc0irxpe30xnc34n4sruq33&amp;rid=giphy.gif&amp;ct=g"/></div>
+  <div class="send msg"><a href="https://twitter.com/ycwhk"><img src="https://assets.codepen.io/845233/internal/avatars/users/default.png?format=auto&amp;version=1527940932&amp;width=80&amp;height=80"/></a><img class="gif" src="https://media2.giphy.com/media/MbscLtRrec0OBSeKa9/giphy.gif?cid=ecf05e473q9reb1w0ibq8o27q4pd0nblq6j6cma4c8prtjgg&amp;rid=giphy.gif&amp;ct=s"/></div>
+</div>
+<!-- partial -->
+  <script src='https://unpkg.com/jest-lite@1.0.0-alpha.4/dist/core.js'></script>
+<script src='https://unpkg.com/jest-lite@1.0.0-alpha.4/dist/enzyme.js'></script>
+<script src='https://unpkg.com/jest-lite@1.0.0-alpha.4/dist/prettify.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>

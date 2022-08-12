@@ -1,0 +1,50 @@
+- cas_href = 'https://twitter.com/cassidoo/';
+- cas_img = 'https://buttondown.s3.amazonaws.com/icons/cfaf57f2-7aba-4c14-b56b-d41008562067.png';
+- ycw_href = 'https://twitter.com/ycwhk';
+- ycw_img = 'https://assets.codepen.io/845233/internal/avatars/users/default.png?format=auto&version=1527940932&width=80&height=80';
+- q_href = 'https://buttondown.email/cassidoo/archive/keep-your-face-always-toward-the-sunshine-and/'
+
+base(target="_top")
+.chat
+  .recv.msg
+    a(href=cas_href) #[img(src=cas_img)]
+    p 
+      q #[a(href=q_href) Write a function that determines if all the characters in a given string are unique]
+      | 
+      br
+      | ... n e ideas?
+  .send.msg
+    a(href=ycw_href) #[img(src=ycw_img)]
+    p subbort emogi?
+  .recv.msg
+    a(href=cas_href) #[img(src=cas_img)]
+    p YeS
+  .send.msg
+    a(href=ycw_href) #[img(src=ycw_img)]
+    p here ugo...
+  .send.msg
+    a(href=ycw_href) #[img(src=ycw_img)]
+    script#impl.
+      function isAllUniq(chars) {
+        const d = new Set();
+        let c, h, k, i = 0;
+        while (i < chars.length) {
+          c = chars[i];
+          h = c >= '\ud800' && c <= '\udb7f';
+          k = chars.substring(i, (i += 1 + h));
+          if (d.has(k)) return false;
+          d.add(k);
+        }
+        return true;
+      }
+  .recv.msg
+    a(href=cas_href) #[img(src=cas_img)]
+    p#report
+  .recv.msg
+    a(href=cas_href) #[img(src=cas_img)]
+    img.gif(
+      src="https://media4.giphy.com/media/WysXULNjWrer4QKTHP/giphy.gif?cid=ecf05e47qmru6jd3lnrq3qtl1cc0irxpe30xnc34n4sruq33&rid=giphy.gif&ct=g"
+    )
+  .send.msg
+    a(href=ycw_href) #[img(src=ycw_img)]
+    img.gif(src='https://media2.giphy.com/media/MbscLtRrec0OBSeKa9/giphy.gif?cid=ecf05e473q9reb1w0ibq8o27q4pd0nblq6j6cma4c8prtjgg&rid=giphy.gif&ct=s')
